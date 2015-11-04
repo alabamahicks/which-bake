@@ -1,0 +1,56 @@
+/* attempt to use themes and module styles for Which Bake? app */
+/* 'ReadyToMix' == beginner questions == yellow and white with blue: rgb(64, 56, 153); rgb(196, 222, 255); rgb(255, 225, 191); rgb(204, 162, 136)*/
+/* 'OnTheRise' == intermediate questions == orange: rgb(127, 50, 28); rgb(255, 159, 132); rgb(255, 99, 55); rgb(127, 79, 66); rgb(204, 79, 44)*/
+/* 'MasterBaker' == advanced questions == tans: rgb(127,73,12); rgb(255, 182, 100); rgb(255, 146, 24); rgb(127,100,70); rgb(204, 117, 19) */
+
+div, ul, li {
+	border: 1px solid chocolate;
+}
+
+/*layout*/
+.board{
+	width: 500px;
+	height: 300px;
+}
+
+.theme-container{
+	width: 500px;
+	height: 600px;
+}
+
+.theme-picker li{
+	display: inline-block;
+	height: 50px;
+}
+
+.focus {
+	width: 400px;
+	height: 300px;
+}
+
+.choices li {
+	display: inline-block;
+	width: 100px;
+	height: 100px;
+}
+
+.score {
+	width: 100px;
+	height: 100px;
+}
+
+.restart {
+	width: 100px;
+	height: 100px;
+}
+
+/*monocolor for basic layout*/
+body{
+	background-color: #D7D7D7;
+}
+
+.board{
+	background-color: #515151;
+}
+
+.
