@@ -16,6 +16,7 @@ div, ul, li {
 .theme-container{
 	width: 500px;
 	height: 600px;
+	color: green;
 }
 
 .theme-picker li{
