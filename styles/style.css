@@ -8,25 +8,52 @@ div, ul, li {
 }
 
 /*layout*/
+body{
+	margin: 0
+}
+
 .board{
-	width: 500px;
+	margin-left: 0;
+	margin-right: 0;
+	margin-top: 150px;
 	height: 300px;
 }
 
 .theme-container{
 	width: 500px;
-	height: 600px;
-	color: green;
+	height: 440px;
+	background-color: green;
+	position: fixed;
+	top: 80px;
+	left: 8px;
+	z-index: 100;
+}
+
+.theme-picker{
+	position: fixed;
+	z-index: 200;
+	background-color: red;
+	top: 20px;
+	left: 8px;
+	-webkit-padding-start: 0px;
 }
 
 .theme-picker li{
 	display: inline-block;
-	height: 50px;
+	height: 45px;
+	width: 75px;
 }
 
 .focus {
 	width: 400px;
 	height: 300px;
+	margin: 5px auto;
+}
+
+.choices {
+	-webkit-padding-start: 0px;
+	margin: 0 auto;
+	text-align: center;
 }
 
 .choices li {
@@ -35,14 +62,27 @@ div, ul, li {
 	height: 100px;
 }
 
-.score {
+.chances {
+	position: relative;
+	left: 550px;
+	top: 50px;
 	width: 100px;
-	height: 100px;
+}
+
+.chances li{
+	width: 50px;
+	height: 50px;
+	list-style: none;
 }
 
 .restart {
-	width: 100px;
-	height: 100px;
+	width: 50px;
+	height: 50px;
+	position: absolute;
+	right: 50px;
+	bottom: 50px;
+	background-color: blue;
+	z-index: 200;
 }
 
 /*monocolor for basic layout*/
@@ -52,6 +92,7 @@ body{
 
 .board{
 	background-color: #515151;
+
 }
 
-.
+
