@@ -3,12 +3,20 @@
 /* 'OnTheRise' == intermediate questions == orange: rgb(127, 50, 28); rgb(255, 159, 132); rgb(255, 99, 55); rgb(127, 79, 66); rgb(204, 79, 44)*/
 /* 'MasterBaker' == advanced questions == tans: rgb(127,73,12); rgb(255, 182, 100); rgb(255, 146, 24); rgb(127,100,70); rgb(204, 117, 19) */
 
+/*********************************BEGIN TYPOGRAPHY****************************/
+body {
+	font-size: 1em;
+	line-height: 1;
+}
+/*********************************END TYPOGRAPHY****************************/
+
+
 /*debugging chocolate*/
 div, ul, li {
 	border: 1px solid chocolate;
 }
+/********************************BEGIN LAYOUT********************************/
 
-/*layout*/
 body{
 	margin: 0
 }
@@ -61,6 +69,7 @@ body{
 	display: inline-block;
 	width: 100px;
 	height: 100px;
+	text-align: center;
 }
 /* TODO: change li's z-index to 'behind' theme-container if that module not selected */
 
@@ -78,8 +87,10 @@ body{
 
 .questions li{
 	width: 50px;
-	height: 50px;
+	/*height: 50px;*/
 	list-style: none;
+	padding: 0.25em 1em;
+	cursor: pointer;
 }
 
 .restart {
@@ -101,13 +112,19 @@ body{
 	z-index: 200;
 }
 
+/********************************END LAYOUT********************************/
+/********************************BEGIN COLOR********************************/
 /*monocolor for basic layout*/
 body{
 	background-color: #D7D7D7;
+	color: #000000;
 }
 
 .board{
-	background-color: #515151;
+	/*background-color: #515151;*/
+	background-image: url("styleimages/butcherblock.png");
+	background-position: center;
+	background-repeat: no-repeat;
 }
 .questions {
 	/* tint scrollbar for IE*/
@@ -120,20 +137,30 @@ body{
 	/*scrollbar-arrow-color: #fff;*/
 	/*scrollbar-track-color: rgba(13, 0, 106, 1);*/
 }
+.fa-check-square-o {
+	color: green;
+}
+.fa-times {
+	color: red;
+}
 
 .restart{
-	background-color: blue;
+	/*background-color: blue;*/
+	color: blue;
 }
 .score {
-	background-color: yellow;
+	/*background-color: yellow;*/
+	color: yellow;
 }
 
 .theme-picker{
-	background-color: red;
+	/*background-color: red;*/
+	background-color: #F2F2F2;
 }
 
 .theme-container{
-	background-color: green;
+	/*background-color: green;*/
+	background-color: #F2F2F2;
 }
 
  /*custom scrollbars */
