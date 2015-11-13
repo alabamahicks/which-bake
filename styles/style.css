@@ -3,6 +3,7 @@
 /* 'OnTheRise' == intermediate questions == orange: rgb(127, 50, 28); rgb(255, 159, 132); rgb(255, 99, 55); rgb(127, 79, 66); rgb(204, 79, 44)*/
 /* 'MasterBaker' == advanced questions == tans: rgb(127,73,12); rgb(255, 182, 100); rgb(255, 146, 24); rgb(127,100,70); rgb(204, 117, 19) */
 
+/*debugging chocolate*/
 div, ul, li {
 	border: 1px solid chocolate;
 }
@@ -22,7 +23,6 @@ body{
 .theme-container{
 	width: 500px;
 	height: 440px;
-	background-color: green;
 	position: fixed;
 	top: 80px;
 	left: 8px;
@@ -32,8 +32,8 @@ body{
 
 .theme-picker{
 	position: fixed;
+	/*display: inline-block;*/
 	z-index: 200;
-	background-color: red;
 	top: 20px;
 	left: 8px;
 	-webkit-padding-start: 0px;
@@ -63,14 +63,19 @@ body{
 	height: 100px;
 }
 
-.chances {
+.questions {
 	position: relative;
 	left: 500px;
 	top: 0;
+	display: inline-block;
 	width: 100px;
+	height: 100%; /*of parent container*/
+	-webkit-margin-before:0;
+	overflow-x: hidden;
+	overflow-y: scroll;
 }
 
-.chances li{
+.questions li{
 	width: 50px;
 	height: 50px;
 	list-style: none;
@@ -82,7 +87,16 @@ body{
 	position: absolute;
 	right: 50px;
 	bottom: 50px;
-	background-color: blue;
+	z-index: 200;
+}
+.score {
+	position: fixed;
+	display: inline-block;
+	top: inherit;
+	margin-top: 30px;
+	right: 50px;
+	width: 50px;
+	height: 50px;
 	z-index: 200;
 }
 
@@ -93,7 +107,20 @@ body{
 
 .board{
 	background-color: #515151;
-
 }
 
+.restart{
+	background-color: blue;
+}
+.score {
+	background-color: yellow;
+}
+
+.theme-picker{
+	background-color: red;
+}
+
+.theme-container{
+	background-color: green;
+}
 
