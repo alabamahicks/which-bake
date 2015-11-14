@@ -9,16 +9,15 @@ body {
 	line-height: 1;
 }
 /*********************************END TYPOGRAPHY****************************/
-
-
+/*******************************BEGIN LAYOUT********************************/
 /*debugging chocolate*/
 div, ul, li {
 	border: 1px solid chocolate;
 }
-/********************************BEGIN LAYOUT********************************/
+
 
 body{
-	margin: 0
+	margin: 0;
 }
 
 .board{
@@ -49,14 +48,20 @@ body{
 
 .theme-picker li{
 	display: inline-block;
-	height: 45px;
+	height: 35px;
 	width: 75px;
+	padding-top: 10px;
+	text-align: center;
+	vertical-align: middle;
 }
 
 .focus {
 	width: 400px;
-	height: 300px;
+	min-height: 260px;
+	max-height: 300px;
 	margin: 15px auto;
+	padding: 20px;
+	text-align: center;
 }
 
 .choices {
@@ -67,12 +72,13 @@ body{
 
 .choices li {
 	display: inline-block;
-	width: 100px;
-	height: 100px;
+	width: 130px;
+	height: 80px;
+	padding-top: 20px;
 	text-align: center;
+	vertical-align: middle;
+	font-weight: bolder;
 }
-/* TODO: change li's z-index to 'behind' theme-container if that module not selected */
-
 .questions {
 	position: relative;
 	left: 500px;
@@ -94,8 +100,6 @@ body{
 }
 
 .restart {
-	width: 50px;
-	height: 50px;
 	position: absolute;
 	right: 50px;
 	bottom: 50px;
@@ -107,8 +111,6 @@ body{
 	top: inherit;
 	margin-top: 30px;
 	right: 50px;
-	width: 100px;
-	height: 100px;
 	z-index: 200;
 }
 
@@ -116,7 +118,7 @@ body{
 /********************************BEGIN COLOR********************************/
 /*monocolor for basic layout*/
 body{
-	background-color: #D7D7D7;
+	background-color: rgba(166,166,166,1.0);
 	color: #000000;
 }
 
@@ -138,15 +140,18 @@ body{
 	/*scrollbar-track-color: rgba(13, 0, 106, 1);*/
 }
 .fa-check-square-o {
-	color: green;
+	color: rgba(0, 102, 0, 1.0);
 }
 .fa-times {
-	color: red;
+	color: rgba(204,0, 0, 1.0);
+}
+.fa-question {
+	color: rgba(77,77,77, 0.5);
 }
 
 .restart{
 	/*background-color: blue;*/
-	color: blue;
+	color: rgba(255,255,255, 0.5);
 }
 .score {
 	/*background-color: yellow;*/
@@ -155,12 +160,26 @@ body{
 
 .theme-picker{
 	/*background-color: red;*/
+	background-color: rgba(166,166,166,1.0);
+}
+/*todo: change to dynamically set per theme chosen*/
+.theme-picker li:first-child{
 	background-color: #F2F2F2;
 }
+
+.theme-picker li{
+	background-color: rgb(217, 217, 217);
+}
+
 
 .theme-container{
 	/*background-color: green;*/
 	background-color: #F2F2F2;
+}
+
+.focus,
+.choices li {
+	background-color:rgb(115, 115, 115);
 }
 
  /*custom scrollbars */
