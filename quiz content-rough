@@ -40,3 +40,16 @@ adv
 *FLAOUNES - A Cypriot pecorino/halloumi cheese-filled pastry flavored with ground mahlepi
 RELIGIEUSES - Two choux buns filled with pastry cream, topped with chocolate ganache and decorated with a whipped cream 'collar'.
 KOUIGN AMANN - A Breton cake rather like puff pastry, but with sugar included in the fewer layers.
+
+
+[11/7/15, 5:02:23 PM] Marius Banea: level_number + "style.css"
+[11/7/15, 5:02:50 PM] Marius Banea: level1style.css
+[11/7/15, 5:03:43 PM] Marius Banea: .level1-heading {wdcuhwbeuwbcew}
+[11/7/15, 5:03:58 PM] Marius Banea: .level1-question {wdcuhwbeuwbcew}
+[11/7/15, 5:04:15 PM] Marius Banea: .level2-heading {wdcuhwbeuwbcew}
+ .level2-question {wdcuhwbeuwbcew}
+[11/7/15, 5:05:37 PM] Marius Banea: "<li class = ' "+levelNumber+"-heading'> "+questionText+"</li>"
+[11/7/15, 5:06:54 PM] Marius Banea: /*display quiz intro*/
+[11/7/15, 5:07:23 PM] Marius Banea: /*choose quiz level*/
+[11/7/15, 5:07:51 PM] Marius Banea: /*display levelNumber questionNumber*/
+[11/7/15, 5:08:17 PM] Marius Banea: /*display levelNumber questionNumber answers*/
