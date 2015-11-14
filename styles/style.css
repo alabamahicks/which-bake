@@ -102,7 +102,7 @@ body{
 .restart {
 	position: absolute;
 	right: 50px;
-	bottom: 50px;
+	bottom: 120px;
 	z-index: 200;
 }
 .score {
