@@ -114,9 +114,19 @@ body{
 	z-index: 200;
 }
 
+.active {
+	border-width: 5px;
+	border-style: solid;
+}
+
 /********************************END LAYOUT********************************/
 /********************************BEGIN COLOR********************************/
 /*monocolor for basic layout*/
+
+.active{
+	border-color: yellow;
+}
+
 body{
 	background-color: rgba(166,166,166,1.0);
 	color: #000000;

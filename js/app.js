@@ -61,62 +61,97 @@ var level1_question2 = {
     image: 'no image url entered yet'
 };
 
+var level1Questions = [level1_question1, level1_question2];
+
 var currentLevel = 1;
 var currentQuestions = [];
 var userScore = 0;
 
 //on page load:
-// show quiz intro
-// hide rest of UI
-startOver();
-loadQuestions(currentLevel);
+$( document ).ready(function() {
+    // show quiz intro
+    //('#quiz-intro').show();
+    //todo: build #quiz-intro
+    //todo: hide rest of UI
+    startOver();
+    loadQuestions(currentLevel);
 
-//on #something click, hide quiz intro, show rest of UI
+//todo: on #something click, hide quiz intro, show rest of UI
+    $( '#addItem').click(function() {
+        //SHOW ENTRY
+        $('.entry-box').show();
+    });
 
 //on #theme-picker li.click,
-//write index to quizLevel (default = 1)
-loadQuestions(currentLevel);
+    $('#theme-picker li').click(function() {
+        //alert('#theme-picker li clicked');
+    //todo: write li's index to chosen Level (default = 1)
+    //    alert(event);
+    //    alert($(this).index());
+        currentLevel = $(this).index() + 1;
+    loadQuestions(currentLevel);
+    });
+
 
 //on #questions li.click, choose quiz question
-//????pass index number to displayQuestion
-//change #questions li.color = active state
+    $('#questions li').click(function() {
+        //alert('#questions li clicked');
+        //pass index number to displayQuestion
+        displayQuestion($(this).index());
+    });
+
 
 //on #choices li.click
-selectAnswer();
+    $('#choices li').click(function() {
+        //alert('#choices li clicked');
+        selectAnswer($(this).index());
+    });
 
 //on #restart click,
-startOver();
+    $('#restart').click(function() {
+        //alert('#restart clicked');
+        startOver();
+    });
+});
 
 
 function displayChoices(possibleAnswers){
-    //set #choices li(each) from possibleAnswers
+    //todo: set #choices li(each) from possibleAnswers
 }
 
 function displayQuestion(indexNumber){
-    //set #focus.background-image:url()
+    //todo: set #focus.background-image:url()
     //set #focus h1.text() = chosenQuestion.prompt
-    //set #focus h2.text() = ""
+    for (var i=0; i<currentQuestions.length; i++){
+        if (indexNumber == currentQuestions[i]){
+            $('#focus h1').innerHTML = currentQuestions[i].prompt;
+            $('#focus h2').innerHTML = currentQuestions[i].elaboration;
+            //todo: change #questions li.color = active state
+            $('#questions').child
+        }
+    }
     displayChoices(chosenQuestion.possibleAnswers);
 }
 
 function displayScore(){
-    // how many questions are loaded?
-    // how many are correct?
-    // update UI...?
+    // todo: how many questions are loaded?
+    // todo: how many are correct?
+    // todo: update UI...?
 }
 
 function loadQuestions(quizLevel){
     //set var currentQuestions to some collection of question objects
     if (currentLevel = 1){
-        currentQuestions = [level1_question1, level1_question2];
+        currentQuestions = level1Questions;
     }
-    //populate #questions with corresponding li count
+    //populate #questions with corresponding li count - TEST
+    $('<li>' + '<i class="fa fa-question fa-2x icons" alt="Try this question">' + '</i>' + '</li>').insertAfter('#questions');
 }
 
 function selectAnswer(choiceIndex){
-    //change li.color = active state
-    //set #focus h1.text() = question.scoredState
-    // set #focus h2.text() = answer.elaboration
+    //todo: change li.color = active state
+    //todo: set #focus h1.text() = question.scoredState
+    //todo: set #focus h2.text() = answer.elaboration
     displayScore();
 }
 
@@ -124,7 +159,7 @@ function startOver(){
     userScore = 0;
     //check currentLevel
     loadQuestions(currentLevel);
-    //set #questions li class to 'fa-question'
+    //todo: set #questions li class to 'fa-question'
 }
 
 
