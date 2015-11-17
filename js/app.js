@@ -306,8 +306,12 @@ function displayChoices(possibleAnswers){
 
     //set #choices li from possibleAnswers
     for (var i=0; i<possibleAnswers.length; i++){
-        var choicePic = possibleAnswers[i].imageURL;
-        $('#choices').append('<li>'+ '<img src="' + choicePic + '" width="130px" height="80px">' + '</li>');
+        var urlString = 'url(' + possibleAnswers[i].imageURL + ')';
+        var choiceTitle = possibleAnswers[i].response;
+        //$('#choices').append('<li>'+ '<img src="' + choicePic + '" width="130px" height="80px">' + '</li>');
+        $('#choices').append('<li width="130px" height="80px">' + choiceTitle + '</li>');
+        $('#choices li:last-child').css('background-image', urlString);
+
         //todo: show possibleAnswers[i].response in added html
         //todo: show attribution - possibleAnswers[i].attribution
     }
@@ -344,7 +348,8 @@ function loadQuestions(level){
     var levelName = 'level' + level + 'Questions';
     var index;
     for (var i=0; i<allTheQuestions.length; i++){
-        index = allTheQuestions.indexOf(levelName);
+        //index = allTheQuestions.indexOf(levelName);
+        //index = $.inArray(levelName, allTheQuestions);
     }
     currentQuestions = allTheQuestions[index];
      //todo:MARIUS - HOW TO MATCH LEVEL TO COLLECTION OF QUESTIONS?
