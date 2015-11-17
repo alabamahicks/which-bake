@@ -69,7 +69,7 @@ var level2_answer1 = {
 };
 
 var level2_answer2 = {
-    response: 'Coronne',
+    response: 'Couronne',
     elaboration: 'From the French word for crown, a wreath of sweet ' +
     'bread laced with a filling via rolling, slicing open, and twisting.',
     imageURL: 'pastryimages/couronne.jpg',
@@ -247,9 +247,9 @@ var instructions = 'Choose a question and test your baking knowledge.  Choose a'
 
 //todo: place holdharmless, explanation in intro.
 
-var level1Questions = [level1_question1, level1_question2];
-var level2Questions = [level2_question1, level2_question2];
-var level3Questions = [level3_question1, level3_question2];
+var level1Questions = {keyLabel: 'level1', questions: [level1_question1, level1_question2]};
+var level2Questions = {keyLabel: 'level2', questions: [level2_question1, level2_question2]};
+var level3Questions = {keyLabel: 'level3', questions: [level3_question1, level3_question2]};
 var allTheQuestions = [level1Questions, level2Questions, level3Questions];
 
 var currentLevel = 1;
@@ -312,7 +312,6 @@ function displayChoices(possibleAnswers){
         $('#choices').append('<li width="130px" height="80px">' + choiceTitle + '</li>');
         $('#choices li:last-child').css('background-image', urlString);
 
-        //todo: show possibleAnswers[i].response in added html
         //todo: show attribution - possibleAnswers[i].attribution
     }
 }
@@ -320,8 +319,10 @@ function displayChoices(possibleAnswers){
 function displayQuestion(indexNumber){
     //todo: set #focus.background-imageURL:url()
     //set #focus h1.text() = chosenQuestion.prompt
+    var chosenQuestion;
     for (var i=0; i<currentQuestions.length; i++){
         if (indexNumber == i){
+            chosenQuestion = currentQuestions[i];
             var ask = currentQuestions[i].prompt;
             //todo: show attribution - currentQuestions[i].attribution
             var choices = currentQuestions[i].possibleAnswers;
@@ -345,18 +346,15 @@ function displayScore(){
 
 function loadQuestions(level){
     //set var currentQuestions to some collection of question objects
-    var levelName = 'level' + level + 'Questions';
+    var levelName = 'level' + level;
     var index;
     for (var i=0; i<allTheQuestions.length; i++){
-        //index = allTheQuestions.indexOf(levelName);
-        //index = $.inArray(levelName, allTheQuestions);
+        var questionBatchKey = allTheQuestions[i].keyLabel;
+        if (questionBatchKey == levelName){
+            currentQuestions = allTheQuestions[i].questions;
+        }
     }
-    currentQuestions = allTheQuestions[index];
-     //todo:MARIUS - HOW TO MATCH LEVEL TO COLLECTION OF QUESTIONS?
-    // else
-    //if (currentLevel = 2){
-    //    currentQuestions = level2Questions;
-    //}
+    //todo: clean out previous questions when changing level
 
     //populate #questions with corresponding li count
     $('#questions').append('<li>' + '<i class="fa fa-question fa-2x icons" alt="Try this question">' + '</i>' + '</li>');
