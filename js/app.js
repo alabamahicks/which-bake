@@ -1,4 +1,6 @@
-//How do I put this stuff in a resource file?
+//todo: MARIUS - How do I put this stuff in a resource file?
+
+//todo: trim all images to proper proportion
 
 var level1_answer1 = {
     response: 'Choux',
@@ -7,7 +9,7 @@ var level1_answer1 = {
     ' 1 part butter, 1 part flour, 2 parts eggs, by weight.',
     imageURL: 'pastryimages/choux_pastry.jpg',
     attribution: 'http://www.kidspot.co.nz/recipes-for+2464+20+Cakes-&-Baking+Choux-pastry-recipe.htm',
-    learningLink: ''
+    learningLink: 'http://www.deliaonline.com/how-to-cook/baking/how-to-make-choux-pastry.html'
 };
 
 var level1_answer2 = {
@@ -15,124 +17,138 @@ var level1_answer2 = {
     elaboration: 'Puff pastry has 1:0.9 ratio of flour to butter, by weight.',
     imageURL: 'pastryimages/puff_pastry.jpg',
     attribution: 'http://www.jusrolprofessional.co.uk/pastry-techniques/rolling-puff-pastry.aspx',
-    learningLink: ''
+    learningLink: 'http://bigbaketheory.com/2012/01/08/pate-feuilletee-puff-pastry/'
 };
 
 var level1_answer3 = {
     response: 'Shortcrust',
     elaboration: 'Shortcrust pastry has 2:1 ratio of flour to ' +
     'fat, by weight.',
-    imageURL: 'no imageURL url entered yet',
+    imageURL: 'pastryimages/shortcrust.jpg',
     attribution: 'http://www.bbcgoodfood.com/recipes/2983/basic-shortcrust-pastry',
-    learningLink: ''
+    learningLink: 'https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=9&cad=rja&uact=8&ved=0CGkQtwIwCGoVChMIl6jd0cqXyQIVxkkmCh1SSQ_P&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D1siW_wm9TnA&usg=AFQjCNGsesZKrrvwlp7XbOlJD7vZdYJMuQ&sig2=JiTUkl3sWV-f9x6925LRyg'
 };
 
 var level1_answer4 = {
-    elaboration: 'ARLETTES - narrow slices of puff pastry flavored with cinnamon' +
+    response: 'Arlettes',
+    elaboration: 'Arlettes are narrow slices of puff pastry flavored with cinnamon' +
     ' and arranged in spirals.',
-    imageURL: 'no imageURL url entered yet',
-    attribution: '',
-    learningLink: ''
+    imageURL: 'pastryimages/arlettes.jpg',
+    attribution: 'http://www.bbc.co.uk/food/recipes/arlettes_17164',
+    learningLink: 'http://www.bbc.co.uk/food/recipes/arlettes_17164'
 };
 
 var level1_answer5 = {
-    elaboration: 'VOL-AU-VENTS - a small, hollow, case of puff pastry, made by' +
+    response: 'Vols-au-vents',
+    elaboration: 'Vols-au-vents use a small, hollow, case of puff pastry, made by' +
     ' cutting two circles in rolled out puff, cutting a hole in one of them, then' +
     ' stacking the ring-shaped piece on top of the disk-shaped piece.  Can be ' +
     'savory or sweet-filled.',
-    imageURL: 'no imageURL url entered yet',
-    attribution: '',
-    learningLink: ''
+    imageURL: 'pastryimages/vols-au-vent.jpg',
+    attribution: 'http://www.lifesambrosia.com/2009/09/vols-au-vent-recipe.html',
+    learningLink: 'http://www.lifesambrosia.com/2009/09/vols-au-vent-recipe.html'
 };
 
 var level1_answer6 = {
-    elaboration: 'BAKLAVA - Sometimes confused with puff pastry, phyllo/filo ' +
+    response: 'Baklava',
+    elaboration: 'Sometimes confused with puff pastry, phyllo/filo ' +
     'dough also has many layers, but unlike puff, has no fat content' +
     ' (so you brush it with butter!)',
-    imageURL: 'no imageURL url entered yet',
-    attribution: '',
-    learningLink: ''
+    imageURL: 'pastryimages/baklava.jpg',
+    attribution: 'http://www.recipe.com/apricot-and-pistachio-baklava-with-orange-cardamom-syrup/',
+    learningLink: 'http://www.recipe.com/apricot-and-pistachio-baklava-with-orange-cardamom-syrup/'
 };
 
 var level2_answer1 = {
-    elaboration: 'OPERA CAKE - Thin almond sponge, sandwiched with ganache and' +
+    response: 'Opera cake',
+    elaboration: 'A thin almond sponge, sandwiched with ganache and' +
     ' coffee syrup, and topped with a dark chocolate glaze.',
-    imageURL: 'no imageURL url entered yet',
-    attribution: '',
-    learningLink: ''
+    imageURL: 'pastryimages/opera_cake.jpg',
+    attribution: 'http://danieruben.blogspot.com/2010/05/opera-cake.html',
+    learningLink: 'http://danieruben.blogspot.com/2010/05/opera-cake.html'
 };
 
 var level2_answer2 = {
-    elaboration: 'CORONNE - From the French word for crown, a wreath of sweet ' +
+    response: 'Coronne',
+    elaboration: 'From the French word for crown, a wreath of sweet ' +
     'bread laced with a filling via rolling, slicing open, and twisting.',
-    imageURL: 'no imageURL url entered yet',
-    attribution: '',
-    learningLink: ''
+    imageURL: 'pastryimages/couronne.jpg',
+    attribution: 'http://www.bbc.co.uk/food/recipes/apricot_couronne_12975',
+    learningLink: 'http://www.bbc.co.uk/food/recipes/apricot_couronne_12975'
 };
 
 var level2_answer3 = {
-    elaboration: 'DACQUOISE - A dessert made with hazelnut meringue layers and ' +
+    response: 'Dacquoise',
+    elaboration: 'A dessert made with hazelnut meringue layers and ' +
     'whipped cream or buttercream',
-    imageURL: 'no imageURL url entered yet',
-    attribution: '',
-    learningLink: ''
+    imageURL: 'pastryimages/dacquoise.jpg',
+    attribution: 'https://claphamkitchen.wordpress.com/2013/10/15/hazelnut-dacquoise/',
+    learningLink: 'https://claphamkitchen.wordpress.com/2013/10/15/hazelnut-dacquoise/'
 };
 
 var level2_answer4 = {
-    elaboration: 'KRANSEKAKE - This Swedish showstopper uses a set of graduated' +
+    response: 'Kransekake',
+    elaboration: 'This Swedish showstopper uses a set of graduated' +
     ' molds to build a tower of iced rings resembling a Christmas tree.',
-    imageURL: 'no imageURL url entered yet',
-    attribution: '',
-    learningLink: ''
+    imageURL: 'pastryimages/kransekake.jpg',
+    attribution: 'http://www.examiner.co.uk/lifestyle/food-drink/recipe-kransekake-stephen-jackson-4966937',
+    learningLink: 'http://scandinavianfood.about.com/od/introduction/ig/Kransekake-photo-gallery/'
 };
 
 var level2_answer5 = {
-    elaboration: 'GENOA - A variant of the Pandolce cake popular in Italy, which' +
+    response: 'Genoa Cake',
+    elaboration: 'A variant of the Pandolce cake popular in Italy, which' +
     ' shares several identifying attributes with the homemade American Christmas' +
     ' fruitcake.',
-    imageURL: 'no imageURL url entered yet',
-    attribution: '',
-    learningLink: ''
+    imageURL: 'pastryimages/genoa_cake.jpg',
+    attribution: 'http://indaily.com.au/food-and-wine/recipes/2013/09/03/genoa-cake-a-true-show-stopper/',
+    learningLink: 'http://indaily.com.au/food-and-wine/recipes/2013/09/03/genoa-cake-a-true-show-stopper/'
 };
 
 var level2_answer6 = {
-    elaboration: 'POVITICA - An Eastern European sweet bread traditionally ' +
-    'served at Christmas, featuring narrow layers of chocolate and walnut ' +
+    response: 'Povitica',
+    elaboration: 'An Eastern European sweet bread traditionally ' +
+    'served at Christmas, featuring narrow layers of filling ' +
+    '(chocolate, walnut, and poppyseed are common)' +
     'filling rolled and then crammed into a loaf tin, producing complex ' +
     'marbling in the slices.',
-    imageURL: 'no imageURL url entered yet',
-    attribution: '',
-    learningLink: ''
+    imageURL: 'pastryimages/povitica.jpg',
+    attribution: 'http://alpineberry.blogspot.com/2011/10/povitica.html',
+    learningLink: 'http://alpineberry.blogspot.com/2011/10/povitica.html'
 };
 
 var level3_answer1 = {
-    elaboration: 'SCHICHTTORTE - This German 20-layer cake is cooked under the' +
+    response: 'Schichttorte',
+    elaboration: 'This German 20-layer cake is cooked under the' +
     ' broiler/grill, rather than the oven.',
-    imageURL: 'no imageURL url entered yet',
-    attribution: '',
-    learningLink: ''
+    imageURL: 'pastryimages/schichttorte.jpg',
+    attribution: 'http://emmaforth.blogspot.com/2014/10/technical-thursday-pauls-schichttorte.html',
+    learningLink: 'http://emmaforth.blogspot.com/2014/10/technical-thursday-pauls-schichttorte.html'
 };
 
 var level3_answer2 = {
-    elaboration: 'MOKATINES - Genoise sponge cut in cubes, layered with coffee' +
+    response: 'Mokatines',
+    elaboration: 'Genoise sponge cut in cubes, layered with coffee' +
     ' buttercream, edged with chopped nuts stuck on with apricot jam, decorated' +
     ' with coffee-flavored buttercream, and glazed with fontant icing.',
     imageURL: 'no imageURL url entered yet',
-    attribution: '',
-    learningLink: ''
+    attribution: 'http://gloverlycupcakes.com/2015/09/30/gbbo-technical-challenge-no-8-mokatines/',
+    learningLink: 'http://thegreatbritishbakeoff.co.uk/marys-mokatines-technical-challenge/'
 };
 
 var level3_answer3 = {
-    elaboration: 'ENTREMETS - a multi-layered mousse-filled cake using joconde' +
+    response: 'Entremets',
+    elaboration: 'A multi-layered mousse-filled cake using joconde' +
     ' sponge comprising of different complementary flavors with varying textural' +
     ' contrasts',
     imageURL: 'no imageURL url entered yet',
     attribution: '',
-    learningLink: ''
+    learningLink: 'https://stickofachef.wordpress.com/2008/07/28/the-anatomy-of-an-entremet-%E2%80%93-part-1/'
 };
 
 var level3_answer4 = {
-    elaboration: 'FLAOUNES - A Cypriot pecorino/halloumi cheese-filled pastry' +
+    response: 'Flaounes',
+    elaboration: 'A Cypriot pecorino/halloumi cheese-filled pastry' +
     ' flavored with ground mahlepi',
     imageURL: 'no imageURL url entered yet',
     attribution: '',
@@ -140,7 +156,8 @@ var level3_answer4 = {
 };
 
 var level3_answer5 = {
-    elaboration: 'RELIGIEUSES - Two choux buns filled with pastry cream, topped' +
+    response: 'Religieuses',
+    elaboration: 'Two choux buns filled with pastry cream, topped' +
     ' with chocolate ganache and decorated with a whipped cream \'collar\'.',
     imageURL: 'no imageURL url entered yet',
     attribution: '',
@@ -148,7 +165,8 @@ var level3_answer5 = {
 };
 
 var level3_answer6 = {
-    elaboration: 'KOUIGN AMANN - A Breton cake rather like puff pastry, but ' +
+    response: 'Kouign Amann',
+    elaboration: 'A Breton cake rather like puff pastry, but ' +
     'with sugar included in the fewer layers.',
     imageURL: 'no imageURL url entered yet',
     attribution: '',
@@ -221,10 +239,11 @@ var holdharmless = 'This app has been prepared as an educational programming exe
     'she successfully makes all of them.' +
     '  All rights reserved.';
 
-var explanationHeader = 'Love cooking shows, but not interested in the sugar?  How big' +
+var explanationHeader = 'Love cooking shows, but no time to bake?  How big' +
     'a fan are you?';
 var instructions = 'Choose a question and test your baking knowledge.  Choose a' +
-    ' higher level and raise the heat in the kitchen.';
+    ' higher level and raise the heat in the kitchen. Learn more (and support ' +
+    'the bakers!) by following the links.';
 
 //todo: place holdharmless, explanation in intro.
 
