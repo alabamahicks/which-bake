@@ -39,6 +39,82 @@ var level1_answer6 = {
     imageURL: 'no imageURL url entered yet'
 };
 
+var level2_answer1 = {
+    elaboration: 'OPERA CAKE - Thin almond sponge, sandwiched with ganache and' +
+    ' coffee syrup, and topped with a dark chocolate glaze.',
+    imageURL: 'no imageURL url entered yet'
+};
+
+var level2_answer2 = {
+    elaboration: 'CORONNE - From the French word for crown, a wreath of sweet ' +
+    'bread laced with a filling via rolling, slicing open, and twisting.',
+    imageURL: 'no imageURL url entered yet'
+};
+
+var level2_answer3 = {
+    elaboration: 'DACQUOISE - A dessert made with hazelnut meringue layers and ' +
+    'whipped cream or buttercream',
+    imageURL: 'no imageURL url entered yet'
+};
+
+var level2_answer4 = {
+    elaboration: 'KRANSEKAKE - This Swedish showstopper uses a set of graduated' +
+    ' molds to build a tower of iced rings resembling a Christmas tree.',
+    imageURL: 'no imageURL url entered yet'
+};
+
+var level2_answer5 = {
+    elaboration: 'GENOA - A variant of the Pandolce cake popular in Italy, which' +
+    ' shares several identifying attributes with the homemade American Christmas' +
+    ' fruitcake.',
+    imageURL: 'no imageURL url entered yet'
+};
+
+var level2_answer6 = {
+    elaboration: 'POVITICA - An Eastern European sweet bread traditionally ' +
+    'served at Christmas, featuring narrow layers of chocolate and walnut ' +
+    'filling rolled and then crammed into a loaf tin, producing complex ' +
+    'marbling in the slices.',
+    imageURL: 'no imageURL url entered yet'
+};
+
+var level3_answer1 = {
+    elaboration: 'SCHICHTTORTE - This German 20-layer cake is cooked under the' +
+    ' broiler/grill, rather than the oven.',
+    imageURL: 'no imageURL url entered yet'
+};
+
+var level3_answer2 = {
+    elaboration: 'MOKATINES - Genoise sponge cut in cubes, layered with coffee' +
+    ' buttercream, edged with chopped nuts stuck on with apricot jam, decorated' +
+    ' with coffee-flavored buttercream, and glazed with fontant icing.',
+    imageURL: 'no imageURL url entered yet'
+};
+
+var level3_answer3 = {
+    elaboration: 'ENTREMETS - a multi-layered mousse-filled cake using joconde' +
+    ' sponge comprising of different complementary flavors with varying textural' +
+    ' contrasts',
+    imageURL: 'no imageURL url entered yet'
+};
+
+var level3_answer4 = {
+    elaboration: 'FLAOUNES - A Cypriot pecorino/halloumi cheese-filled pastry' +
+    ' flavored with ground mahlepi',
+    imageURL: 'no imageURL url entered yet'
+};
+
+var level3_answer5 = {
+    elaboration: 'RELIGIEUSES - Two choux buns filled with pastry cream, topped' +
+    ' with chocolate ganache and decorated with a whipped cream \'collar\'.',
+    imageURL: 'no imageURL url entered yet'
+};
+
+var level3_answer6 = {
+    elaboration: 'KOUIGN AMANN - A Breton cake rather like puff pastry, but ' +
+    'with sugar included in the fewer layers.',
+    imageURL: 'no imageURL url entered yet'
+};
 var scoreState = {
     UNSCORED: 1,
     CORRECT: 2,
@@ -61,7 +137,43 @@ var level1_question2 = {
     imageURL: 'no imageURL url entered yet'
 };
 
+var level2_question1 = {
+    prompt: 'Which cake would work for a gluten-free friend\'s birthday?',
+    correctAnswer: level2_answer3,
+    possibleAnswers: [level2_answer1, level2_answer2, level2_answer3],
+    score: scoreState.UNSCORED,
+    imageURL: 'no imageURL url entered yet'
+};
+
+var level2_question2 = {
+    prompt: 'Which holiday treat requires a special set of molds?',
+    correctAnswer: level2_answer1,
+    possibleAnswers: [level2_answer4, level2_answer5, level2_answer6],
+    score: scoreState.UNSCORED,
+    imageURL: 'no imageURL url entered yet'
+};
+
+var level3_question1 = {
+    prompt: 'Which difficult bake has 20 layers?',
+    correctAnswer: level3_answer1,
+    possibleAnswers: [level3_answer1, level3_answer2, level3_answer3],
+    score: scoreState.UNSCORED,
+    imageURL: 'no imageURL url entered yet'
+};
+
+var level3_question2 = {
+    prompt: 'Which of these French-sounding pastries isn\'t actually French?',
+    correctAnswer: level3_answer1,
+    possibleAnswers: [level3_answer4, level3_answer5, level3_answer6],
+    score: scoreState.UNSCORED,
+    imageURL: 'no imageURL url entered yet'
+};
+
+
 var level1Questions = [level1_question1, level1_question2];
+var level2Questions = [level2_question1, level2_question2];
+var level3Questions = [level3_question1, level3_question2];
+var allTheQuestions = [level1Questions, level2Questions, level3Questions];
 
 var currentLevel = 1;
 var currentQuestions = [];
@@ -85,10 +197,7 @@ $( document ).ready(function() {
 
 //on #theme-picker li.click,
     $('#theme-picker li').click(function() {
-        //alert('#theme-picker li clicked');
-    //todo: write li's index to chosen Level (default = 1)
-    //    alert(event);
-    //    alert($(this).index());
+    //write li's index to chosen Level (default = 1)
         currentLevel = $(this).index() + 1;
     loadQuestions(currentLevel);
     });
@@ -96,7 +205,6 @@ $( document ).ready(function() {
 
 //on #questions li.click, choose quiz question
     $('#questions li').click(function() {
-        //alert('#questions li clicked');
         //pass index number to displayQuestion
         var indexNumber = ($(this).index());
         displayQuestion(indexNumber);
@@ -105,13 +213,11 @@ $( document ).ready(function() {
 
 //on #choices li.click
     $('#choices li').click(function() {
-        //alert('#choices li clicked');
         selectAnswer($(this).index());
     });
 
 //on #restart click,
     $('#restart').click(function() {
-        //alert('#restart clicked');
         startOver();
     });
 });
@@ -124,7 +230,7 @@ function displayChoices(possibleAnswers){
     //set #choices li from possibleAnswers
     for (var i=0; i<possibleAnswers.length; i++){
         var choicePic = possibleAnswers[i].imageURL;
-        $('#choices').append('<li>'+ '<img src="' + choicePic + '">' + '</li>');
+        $('#choices').append('<li>'+ '<img src="' + choicePic + '" width="130px" height="80px">' + '</li>');
     }
 }
 
@@ -155,15 +261,19 @@ function displayScore(){
 
 function loadQuestions(level){
     //set var currentQuestions to some collection of question objects
-    if (level = 1) {
-        currentQuestions = level1Questions;
-    } //todo:MARIUS - HOW TO MATCH LEVEL TO COLLECTION OF QUESTIONS?
+    var levelName = 'level' + level + 'Questions';
+    var index;
+    for (var i=0; i<allTheQuestions.length; i++){
+        index = allTheQuestions.indexOf(levelName);
+    }
+    currentQuestions = allTheQuestions[index];
+     //todo:MARIUS - HOW TO MATCH LEVEL TO COLLECTION OF QUESTIONS?
     // else
     //if (currentLevel = 2){
     //    currentQuestions = level2Questions;
     //}
 
-    //populate #questions with corresponding li count - TEST
+    //populate #questions with corresponding li count
     $('#questions').append('<li>' + '<i class="fa fa-question fa-2x icons" alt="Try this question">' + '</i>' + '</li>');
 }
 
