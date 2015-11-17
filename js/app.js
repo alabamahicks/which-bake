@@ -131,7 +131,7 @@ var level3_answer2 = {
     elaboration: 'Genoise sponge cut in cubes, layered with coffee' +
     ' buttercream, edged with chopped nuts stuck on with apricot jam, decorated' +
     ' with coffee-flavored buttercream, and glazed with fontant icing.',
-    imageURL: 'no imageURL url entered yet',
+    imageURL: 'pastryimages/mokatines.jpg',
     attribution: 'http://gloverlycupcakes.com/2015/09/30/gbbo-technical-challenge-no-8-mokatines/',
     learningLink: 'http://thegreatbritishbakeoff.co.uk/marys-mokatines-technical-challenge/'
 };
@@ -141,8 +141,8 @@ var level3_answer3 = {
     elaboration: 'A multi-layered mousse-filled cake using joconde' +
     ' sponge comprising of different complementary flavors with varying textural' +
     ' contrasts',
-    imageURL: 'no imageURL url entered yet',
-    attribution: '',
+    imageURL: 'pastryimages/entremets.jpg',
+    attribution: 'https://granddiplomelondon.wordpress.com/2012/07/24/day-119-and-120-create-my-own-entremet-mon-23rd-and-tues-24th-july/',
     learningLink: 'https://stickofachef.wordpress.com/2008/07/28/the-anatomy-of-an-entremet-%E2%80%93-part-1/'
 };
 
@@ -150,27 +150,27 @@ var level3_answer4 = {
     response: 'Flaounes',
     elaboration: 'A Cypriot pecorino/halloumi cheese-filled pastry' +
     ' flavored with ground mahlepi',
-    imageURL: 'no imageURL url entered yet',
-    attribution: '',
-    learningLink: ''
+    imageURL: 'pastryimages/flaounes.jpg',
+    attribution: 'http://www.sbs.com.au/food/recipes/cypriot-easter-bread-flaounes',
+    learningLink: 'http://www.sbs.com.au/food/recipes/cypriot-easter-bread-flaounes'
 };
 
 var level3_answer5 = {
     response: 'Religieuses',
     elaboration: 'Two choux buns filled with pastry cream, topped' +
     ' with chocolate ganache and decorated with a whipped cream \'collar\'.',
-    imageURL: 'no imageURL url entered yet',
-    attribution: '',
-    learningLink: ''
+    imageURL: 'pastryimages/religieuse.jpg',
+    attribution: 'http://www.bbc.co.uk/food/recipes/religieuse_46431',
+    learningLink: 'https://www.meilleurduchef.com/cgi/mdc/l/en/recipe/coffee-religieuses.html'
 };
 
 var level3_answer6 = {
     response: 'Kouign Amann',
-    elaboration: 'A Breton cake rather like puff pastry, but ' +
+    elaboration: 'A Breton cake rather like puff pastry or croissantskoui, but ' +
     'with sugar included in the fewer layers.',
-    imageURL: 'no imageURL url entered yet',
-    attribution: '',
-    learningLink: ''
+    imageURL: 'pastryimages/kouign_amann.jpg',
+    attribution: 'http://www.karenskitchenstories.com/2015/03/kouign-amann.html',
+    learningLink: 'http://www.karenskitchenstories.com/2015/03/kouign-amann.html'
 };
 var scoreState = {
     UNSCORED: 1,
@@ -183,8 +183,8 @@ var level1_question1 = {
     correctAnswer: level1_answer2,
     possibleAnswers: [level1_answer1, level1_answer2, level1_answer3],
     score: scoreState.UNSCORED,
-    imageURL: 'no imageURL url entered yet',
-    attribution: ''
+    imageURL: 'pastryimages/fat2.jpg',
+    attribution: 'http://food52.com/blog/3414-a-shortcut-to-perfect-puff-pastry'
 };
 
 var level1_question2 = {
@@ -192,8 +192,8 @@ var level1_question2 = {
     correctAnswer: level1_answer3,
     possibleAnswers: [level1_answer4, level1_answer5, level1_answer6],
     score: scoreState.UNSCORED,
-    imageURL: 'no imageURL url entered yet',
-    attribution: ''
+    imageURL: 'pastryimages/puff_closeup.jpg',
+    attribution: 'http://food52.com/blog/3414-a-shortcut-to-perfect-puff-pastry'
 };
 
 var level2_question1 = {
@@ -201,8 +201,8 @@ var level2_question1 = {
     correctAnswer: level2_answer3,
     possibleAnswers: [level2_answer1, level2_answer2, level2_answer3],
     score: scoreState.UNSCORED,
-    imageURL: 'no imageURL url entered yet',
-    attribution: ''
+    imageURL: 'pastryimages/gluten_free.jpg',
+    attribution: 'http://www.nakedavocado.com/gluten/'
 };
 
 var level2_question2 = {
@@ -210,8 +210,8 @@ var level2_question2 = {
     correctAnswer: level2_answer1,
     possibleAnswers: [level2_answer4, level2_answer5, level2_answer6],
     score: scoreState.UNSCORED,
-    imageURL: 'no imageURL url entered yet',
-    attribution: ''
+    imageURL: 'pastryimages/baking-trays.jpg',
+    attribution: 'http://www.kitchensourcebook.co.uk/2009/12/29/vintage-baking-trays/'
 };
 
 var level3_question1 = {
@@ -219,8 +219,8 @@ var level3_question1 = {
     correctAnswer: level3_answer1,
     possibleAnswers: [level3_answer1, level3_answer2, level3_answer3],
     score: scoreState.UNSCORED,
-    imageURL: 'no imageURL url entered yet',
-    attribution: ''
+    imageURL: 'pastryimages/chocolate_layers.jpg',
+    attribution: 'http://www.delish.com/cooking/g767/chocolate-cakes/'
 };
 
 var level3_question2 = {
@@ -228,8 +228,8 @@ var level3_question2 = {
     correctAnswer: level3_answer1,
     possibleAnswers: [level3_answer4, level3_answer5, level3_answer6],
     score: scoreState.UNSCORED,
-    imageURL: 'no imageURL url entered yet',
-    attribution: ''
+    imageURL: 'pastryimages/eiffel_tower.jpeg',
+    attribution: 'http://www.clipartbest.com/clipart-eaTeLj5i4'
 };
 
 var holdharmless = 'This app has been prepared as an educational programming exercise and no' +
