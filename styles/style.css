@@ -12,7 +12,7 @@ body {
 /*******************************BEGIN LAYOUT********************************/
 /*debugging chocolate*/
 div, ul, li {
-	border: 1px solid chocolate;
+	/*border: 1px solid chocolate;*/
 }
 
 
@@ -62,6 +62,7 @@ body{
 	margin: 15px auto;
 	padding: 20px;
 	text-align: center;
+	position: relative;
 }
 
 .choices {
@@ -81,6 +82,9 @@ body{
 	margin: 0 4px;
 	background-position: center;
 	background-size: cover
+}
+.frosted {
+	background-color: rgba(255,255,255,0.5);
 }
 .questions {
 	position: relative;
@@ -120,6 +124,20 @@ body{
 .active {
 	border-width: 5px;
 	border-style: solid;
+}
+
+.links {
+	text-decoration: none;
+	position: absolute;
+	bottom: 10px;
+}
+
+#photo-attribution {
+	left: 10px;
+}
+
+#learn-more {
+	right: 10px;
 }
 
 /********************************END LAYOUT********************************/

@@ -1,6 +1,6 @@
 //todo: MARIUS - How do I put this stuff in a resource file?
 
-//todo: trim all images to proper proportion
+//todo: trim all images to proper proportion?
 
 var level1_answer1 = {
     response: 'Choux',
@@ -309,10 +309,8 @@ function displayChoices(possibleAnswers){
         var urlString = 'url(' + possibleAnswers[i].imageURL + ')';
         var choiceTitle = possibleAnswers[i].response;
         //$('#choices').append('<li>'+ '<img src="' + choicePic + '" width="130px" height="80px">' + '</li>');
-        $('#choices').append('<li width="132px" height="90px">' + choiceTitle + '</li>');
+        $('#choices').append('<li width="132px" height="90px">' + '<div class="frosted">' + choiceTitle + '</div>' + '</li>');
         $('#choices li:last-child').css('background-image', urlString);
-
-        //todo: show attribution - possibleAnswers[i].attribution
     }
 }
 
@@ -328,6 +326,7 @@ function displayQuestion(indexNumber){
             var choices = currentQuestions[i].possibleAnswers;
             $('#focus h1').html(ask);
             $('#focus h2').hide();
+            $('#learn-more').hide();
             displayChoices(choices);
             //todo: change #questions li.color = active state
             var childNumber = indexNumber + 1;
