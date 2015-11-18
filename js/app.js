@@ -311,6 +311,7 @@ function displayChoices(possibleAnswers){
         //$('#choices').append('<li>'+ '<img src="' + choicePic + '" width="130px" height="80px">' + '</li>');
         $('#choices').append('<li width="132px" height="90px">' + '<div class="frosted">' + choiceTitle + '</div>' + '</li>');
         $('#choices li:last-child').css('background-image', urlString);
+        $('#choices li:last-child').attr('alt',urlString);
     }
 }
 
@@ -321,10 +322,14 @@ function displayQuestion(indexNumber){
     for (var i=0; i<currentQuestions.length; i++){
         if (indexNumber == i){
             chosenQuestion = currentQuestions[i];
-            var ask = currentQuestions[i].prompt;
-            //todo: show attribution - currentQuestions[i].attribution
-            var choices = currentQuestions[i].possibleAnswers;
+            var ask = chosenQuestion.prompt;
+            var askImageURL = 'url(' + chosenQuestion.imageURL + ')';
+            var imgSource = chosenQuestion.attribution;
+            var choices = chosenQuestion.possibleAnswers;
             $('#focus h1').html(ask);
+            $('#focus').css('background-image', askImageURL);
+            $('#photo-attribution').attr('href', imgSource);
+            $('#photo-attribution').attr('alt',imgSource);
             $('#focus h2').hide();
             $('#learn-more').hide();
             displayChoices(choices);
@@ -333,7 +338,6 @@ function displayQuestion(indexNumber){
             $('#questions li:nth-child(childNumber)').addClass('active');
         }
     }
-    displayChoices(chosenQuestion.possibleAnswers);
 }
 
 function displayScore(){
