@@ -79,6 +79,8 @@ body{
 	vertical-align: middle;
 	font-weight: bolder;
 	margin: 0 4px;
+	background-position: center;
+	background-size: cover
 }
 .questions {
 	position: relative;

@@ -309,7 +309,7 @@ function displayChoices(possibleAnswers){
         var urlString = 'url(' + possibleAnswers[i].imageURL + ')';
         var choiceTitle = possibleAnswers[i].response;
         //$('#choices').append('<li>'+ '<img src="' + choicePic + '" width="130px" height="80px">' + '</li>');
-        $('#choices').append('<li width="130px" height="80px">' + choiceTitle + '</li>');
+        $('#choices').append('<li width="132px" height="90px">' + choiceTitle + '</li>');
         $('#choices li:last-child').css('background-image', urlString);
 
         //todo: show attribution - possibleAnswers[i].attribution
