@@ -1,7 +1,5 @@
 //todo: MARIUS - How do I put this stuff in a resource file?
 
-//todo: trim all images to proper proportion?
-
 var level1_answer1 = {
     response: 'Choux',
     elaboration: 'Choux pastry has a high moisture content which allows ' +
@@ -234,18 +232,16 @@ var level3_question2 = {
 
 var holdharmless = 'This app has been prepared as an educational programming exercise and no' +
     ' profit is generated from its use.  Images appearing within are included in' +
-    'appreciation for the baker\'s skills, and attribution is given for their' +
+    ' appreciation for the baker\'s skills, and attribution is given for their' +
     ' sources.  Images are planned to be replaced by alternates owned by the student when' +
-    'she successfully makes all of them.' +
+    ' she successfully makes all of them.' +
     '  All rights reserved.';
 
 var explanationHeader = 'Love cooking shows, but no time to bake?  How big' +
-    'a fan are you?';
+    ' a fan are you?';
 var instructions = 'Choose a question and test your baking knowledge.  Choose a' +
     ' higher level and raise the heat in the kitchen. Learn more (and support ' +
     'the bakers!) by following the links.';
-
-//todo: place holdharmless, explanation in intro.
 
 var level1Questions = {keyLabel: 'level1', questions: [level1_question1, level1_question2]};
 var level2Questions = {keyLabel: 'level2', questions: [level2_question1, level2_question2]};
@@ -259,14 +255,10 @@ var userScore = 0;
 //on page load:
 $( document ).ready(function() {
     event.preventDefault(); //prevents default reloading
-    // show quiz intro
-    //('#quiz-intro').show();
-    //todo: build #quiz-intro
-    //todo: hide rest of UI
+    showIntro();
     startOver();
     loadQuestions(currentLevel);
 
-//todo: on #something click, hide quiz intro, show rest of UI
     $( '#addItem').click(function() {
         //SHOW ENTRY
         $('.entry-box').show();
@@ -316,8 +308,7 @@ function displayChoices(possibleAnswers){
 }
 
 function displayQuestion(indexNumber){
-    //todo: set #focus.background-imageURL:url()
-    //set #focus h1.text() = chosenQuestion.prompt
+    hideIntro();
     var chosenQuestion;
     for (var i=0; i<currentQuestions.length; i++){
         if (indexNumber == i){
@@ -328,6 +319,7 @@ function displayQuestion(indexNumber){
             var choices = chosenQuestion.possibleAnswers;
             $('#focus h1').html(ask);
             $('#focus').css('background-image', askImageURL);
+            $('#photo-attribution').show();
             $('#photo-attribution').attr('href', imgSource);
             $('#photo-attribution').attr('alt',imgSource);
             $('#focus h2').hide();
@@ -345,6 +337,12 @@ function displayScore(){
     // todo: how many questions are loaded?
     // todo: how many are correct?
     // todo: update UI...?
+}
+
+function hideIntro(){
+    $('#focus h2').hide();
+    $('#focus h3').hide();
+    $('#focus h6').hide();
 }
 
 function loadQuestions(level){
@@ -371,9 +369,21 @@ function selectAnswer(choiceIndex){
     displayScore();
 }
 
+
+function showIntro(){
+    $('#photo-attribution').hide();
+    $('#learn-more').hide();
+    var quizTitle = "Which Bake?";
+    $('#focus h1').html(quizTitle);
+    $('#focus h2').html(explanationHeader);
+    $('#focus h3').html(instructions);
+    $('#focus h6').html(holdharmless);
+}
+
 function startOver(){
     userScore = 0;
-    //check currentLevel
+    //todo: remove existing questions
+    showIntro();
     loadQuestions(currentLevel);
 }
 
