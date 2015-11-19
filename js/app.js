@@ -7,7 +7,7 @@ var level1_answer1 = {
     elaboration: 'Choux pastry has a high moisture content which allows ' +
     'steam to force a tripling in size during baking. Its recipe is 2 parts water,' +
     ' 1 part butter, 1 part flour, 2 parts eggs, by weight.',
-    imageURL: 'pastryimages/choux_pastry.jpg',
+    imageURL: 'opt_pastryimages/choux_pastry.jpg',
     attribution: 'http://www.kidspot.co.nz/recipes-for+2464+20+Cakes-&-Baking+Choux-pastry-recipe.htm',
     learningLink: 'http://www.deliaonline.com/how-to-cook/baking/how-to-make-choux-pastry.html'
 };
@@ -15,7 +15,7 @@ var level1_answer1 = {
 var level1_answer2 = {
     response: 'Puff',
     elaboration: 'Puff pastry has 1:0.9 ratio of flour to butter, by weight.',
-    imageURL: 'pastryimages/puff_pastry.jpg',
+    imageURL: 'opt_pastryimages/puff_pastry.jpg',
     attribution: 'http://www.jusrolprofessional.co.uk/pastry-techniques/rolling-puff-pastry.aspx',
     learningLink: 'http://bigbaketheory.com/2012/01/08/pate-feuilletee-puff-pastry/'
 };
@@ -24,7 +24,7 @@ var level1_answer3 = {
     response: 'Shortcrust',
     elaboration: 'Shortcrust pastry has 2:1 ratio of flour to ' +
     'fat, by weight.',
-    imageURL: 'pastryimages/shortcrust.jpg',
+    imageURL: 'opt_pastryimages/shortcrust.jpg',
     attribution: 'http://www.bbcgoodfood.com/recipes/2983/basic-shortcrust-pastry',
     learningLink: 'https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=9&cad=rja&uact=8&ved=0CGkQtwIwCGoVChMIl6jd0cqXyQIVxkkmCh1SSQ_P&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D1siW_wm9TnA&usg=AFQjCNGsesZKrrvwlp7XbOlJD7vZdYJMuQ&sig2=JiTUkl3sWV-f9x6925LRyg'
 };
@@ -33,7 +33,7 @@ var level1_answer4 = {
     response: 'Arlettes',
     elaboration: 'Arlettes are narrow slices of puff pastry flavored with cinnamon' +
     ' and arranged in spirals.',
-    imageURL: 'pastryimages/arlettes.jpg',
+    imageURL: 'opt_pastryimages/arlettes.jpg',
     attribution: 'http://www.bbc.co.uk/food/recipes/arlettes_17164',
     learningLink: 'http://www.bbc.co.uk/food/recipes/arlettes_17164'
 };
@@ -44,7 +44,7 @@ var level1_answer5 = {
     ' cutting two circles in rolled out puff, cutting a hole in one of them, then' +
     ' stacking the ring-shaped piece on top of the disk-shaped piece.  Can be ' +
     'savory or sweet-filled.',
-    imageURL: 'pastryimages/vols-au-vent.jpg',
+    imageURL: 'opt_pastryimages/vols-au-vent.jpg',
     attribution: 'http://www.lifesambrosia.com/2009/09/vols-au-vent-recipe.html',
     learningLink: 'http://www.lifesambrosia.com/2009/09/vols-au-vent-recipe.html'
 };
@@ -54,7 +54,7 @@ var level1_answer6 = {
     elaboration: 'Sometimes confused with puff pastry, phyllo/filo ' +
     'dough also has many layers, but unlike puff, has no fat content' +
     ' (so you brush it with butter!)',
-    imageURL: 'pastryimages/baklava.jpg',
+    imageURL: 'opt_pastryimages/baklava.jpg',
     attribution: 'http://www.recipe.com/apricot-and-pistachio-baklava-with-orange-cardamom-syrup/',
     learningLink: 'http://www.recipe.com/apricot-and-pistachio-baklava-with-orange-cardamom-syrup/'
 };
@@ -63,7 +63,7 @@ var level2_answer1 = {
     response: 'Opera cake',
     elaboration: 'A thin almond sponge, sandwiched with ganache and' +
     ' coffee syrup, and topped with a dark chocolate glaze.',
-    imageURL: 'pastryimages/opera_cake.jpg',
+    imageURL: 'opt_pastryimages/opera_cake.jpg',
     attribution: 'http://danieruben.blogspot.com/2010/05/opera-cake.html',
     learningLink: 'http://danieruben.blogspot.com/2010/05/opera-cake.html'
 };
@@ -72,7 +72,7 @@ var level2_answer2 = {
     response: 'Couronne',
     elaboration: 'From the French word for crown, a wreath of sweet ' +
     'bread laced with a filling via rolling, slicing open, and twisting.',
-    imageURL: 'pastryimages/couronne.jpg',
+    imageURL: 'opt_pastryimages/couronne.jpg',
     attribution: 'http://www.bbc.co.uk/food/recipes/apricot_couronne_12975',
     learningLink: 'http://www.bbc.co.uk/food/recipes/apricot_couronne_12975'
 };
@@ -81,7 +81,7 @@ var level2_answer3 = {
     response: 'Dacquoise',
     elaboration: 'A dessert made with hazelnut meringue layers and ' +
     'whipped cream or buttercream',
-    imageURL: 'pastryimages/dacquoise.jpg',
+    imageURL: 'opt_pastryimages/dacquoise.jpg',
     attribution: 'https://claphamkitchen.wordpress.com/2013/10/15/hazelnut-dacquoise/',
     learningLink: 'https://claphamkitchen.wordpress.com/2013/10/15/hazelnut-dacquoise/'
 };
@@ -90,7 +90,7 @@ var level2_answer4 = {
     response: 'Kransekake',
     elaboration: 'This Swedish showstopper uses a set of graduated' +
     ' molds to build a tower of iced rings resembling a Christmas tree.',
-    imageURL: 'pastryimages/kransekake.jpg',
+    imageURL: 'opt_pastryimages/kransekake.jpg',
     attribution: 'http://www.examiner.co.uk/lifestyle/food-drink/recipe-kransekake-stephen-jackson-4966937',
     learningLink: 'http://scandinavianfood.about.com/od/introduction/ig/Kransekake-photo-gallery/'
 };
@@ -100,7 +100,7 @@ var level2_answer5 = {
     elaboration: 'A variant of the Pandolce cake popular in Italy, which' +
     ' shares several identifying attributes with the homemade American Christmas' +
     ' fruitcake.',
-    imageURL: 'pastryimages/genoa_cake.jpg',
+    imageURL: 'opt_pastryimages/genoa_cake.jpg',
     attribution: 'http://indaily.com.au/food-and-wine/recipes/2013/09/03/genoa-cake-a-true-show-stopper/',
     learningLink: 'http://indaily.com.au/food-and-wine/recipes/2013/09/03/genoa-cake-a-true-show-stopper/'
 };
@@ -112,7 +112,7 @@ var level2_answer6 = {
     '(chocolate, walnut, and poppyseed are common)' +
     'filling rolled and then crammed into a loaf tin, producing complex ' +
     'marbling in the slices.',
-    imageURL: 'pastryimages/povitica.jpg',
+    imageURL: 'opt_pastryimages/povitica.jpg',
     attribution: 'http://alpineberry.blogspot.com/2011/10/povitica.html',
     learningLink: 'http://alpineberry.blogspot.com/2011/10/povitica.html'
 };
@@ -121,7 +121,7 @@ var level3_answer1 = {
     response: 'Schichttorte',
     elaboration: 'This German 20-layer cake is cooked under the' +
     ' broiler/grill, rather than the oven.',
-    imageURL: 'pastryimages/schichttorte.jpg',
+    imageURL: 'opt_pastryimages/schichttorte.jpg',
     attribution: 'http://emmaforth.blogspot.com/2014/10/technical-thursday-pauls-schichttorte.html',
     learningLink: 'http://emmaforth.blogspot.com/2014/10/technical-thursday-pauls-schichttorte.html'
 };
@@ -131,7 +131,7 @@ var level3_answer2 = {
     elaboration: 'Genoise sponge cut in cubes, layered with coffee' +
     ' buttercream, edged with chopped nuts stuck on with apricot jam, decorated' +
     ' with coffee-flavored buttercream, and glazed with fontant icing.',
-    imageURL: 'pastryimages/mokatines.jpg',
+    imageURL: 'opt_pastryimages/mokatines.jpg',
     attribution: 'http://gloverlycupcakes.com/2015/09/30/gbbo-technical-challenge-no-8-mokatines/',
     learningLink: 'http://thegreatbritishbakeoff.co.uk/marys-mokatines-technical-challenge/'
 };
@@ -141,7 +141,7 @@ var level3_answer3 = {
     elaboration: 'A multi-layered mousse-filled cake using joconde' +
     ' sponge comprising of different complementary flavors with varying textural' +
     ' contrasts',
-    imageURL: 'pastryimages/entremets.jpg',
+    imageURL: 'opt_pastryimages/entremets.jpg',
     attribution: 'https://granddiplomelondon.wordpress.com/2012/07/24/day-119-and-120-create-my-own-entremet-mon-23rd-and-tues-24th-july/',
     learningLink: 'https://stickofachef.wordpress.com/2008/07/28/the-anatomy-of-an-entremet-%E2%80%93-part-1/'
 };
@@ -150,7 +150,7 @@ var level3_answer4 = {
     response: 'Flaounes',
     elaboration: 'A Cypriot pecorino/halloumi cheese-filled pastry' +
     ' flavored with ground mahlepi',
-    imageURL: 'pastryimages/flaounes.jpg',
+    imageURL: 'opt_pastryimages/flaounes.jpg',
     attribution: 'http://www.sbs.com.au/food/recipes/cypriot-easter-bread-flaounes',
     learningLink: 'http://www.sbs.com.au/food/recipes/cypriot-easter-bread-flaounes'
 };
@@ -159,7 +159,7 @@ var level3_answer5 = {
     response: 'Religieuses',
     elaboration: 'Two choux buns filled with pastry cream, topped' +
     ' with chocolate ganache and decorated with a whipped cream \'collar\'.',
-    imageURL: 'pastryimages/religieuse.jpg',
+    imageURL: 'opt_pastryimages/religieuse.jpg',
     attribution: 'http://www.bbc.co.uk/food/recipes/religieuse_46431',
     learningLink: 'https://www.meilleurduchef.com/cgi/mdc/l/en/recipe/coffee-religieuses.html'
 };
@@ -168,7 +168,7 @@ var level3_answer6 = {
     response: 'Kouign Amann',
     elaboration: 'A Breton cake rather like puff pastry or croissantskoui, but ' +
     'with sugar included in the fewer layers.',
-    imageURL: 'pastryimages/kouign_amann.jpg',
+    imageURL: 'opt_pastryimages/kouign_amann.jpg',
     attribution: 'http://www.karenskitchenstories.com/2015/03/kouign-amann.html',
     learningLink: 'http://www.karenskitchenstories.com/2015/03/kouign-amann.html'
 };
@@ -183,7 +183,7 @@ var level1_question1 = {
     correctAnswer: level1_answer2,
     possibleAnswers: [level1_answer1, level1_answer2, level1_answer3],
     score: scoreState.UNSCORED,
-    imageURL: 'pastryimages/fat2.jpg',
+    imageURL: 'opt_pastryimages/fat2.jpg',
     attribution: 'http://food52.com/blog/3414-a-shortcut-to-perfect-puff-pastry'
 };
 
@@ -192,7 +192,7 @@ var level1_question2 = {
     correctAnswer: level1_answer3,
     possibleAnswers: [level1_answer4, level1_answer5, level1_answer6],
     score: scoreState.UNSCORED,
-    imageURL: 'pastryimages/puff_closeup.jpg',
+    imageURL: 'opt_pastryimages/puff_closeup.jpg',
     attribution: 'http://food52.com/blog/3414-a-shortcut-to-perfect-puff-pastry'
 };
 
@@ -201,7 +201,7 @@ var level2_question1 = {
     correctAnswer: level2_answer3,
     possibleAnswers: [level2_answer1, level2_answer2, level2_answer3],
     score: scoreState.UNSCORED,
-    imageURL: 'pastryimages/gluten_free.jpg',
+    imageURL: 'opt_pastryimages/gluten_free.jpg',
     attribution: 'http://www.nakedavocado.com/gluten/'
 };
 
@@ -210,7 +210,7 @@ var level2_question2 = {
     correctAnswer: level2_answer1,
     possibleAnswers: [level2_answer4, level2_answer5, level2_answer6],
     score: scoreState.UNSCORED,
-    imageURL: 'pastryimages/baking-trays.jpg',
+    imageURL: 'opt_pastryimages/baking-trays.jpg',
     attribution: 'http://www.kitchensourcebook.co.uk/2009/12/29/vintage-baking-trays/'
 };
 
@@ -219,7 +219,7 @@ var level3_question1 = {
     correctAnswer: level3_answer1,
     possibleAnswers: [level3_answer1, level3_answer2, level3_answer3],
     score: scoreState.UNSCORED,
-    imageURL: 'pastryimages/chocolate_layers.jpg',
+    imageURL: 'opt_pastryimages/chocolate_layers.jpg',
     attribution: 'http://www.delish.com/cooking/g767/chocolate-cakes/'
 };
 
@@ -228,7 +228,7 @@ var level3_question2 = {
     correctAnswer: level3_answer1,
     possibleAnswers: [level3_answer4, level3_answer5, level3_answer6],
     score: scoreState.UNSCORED,
-    imageURL: 'pastryimages/eiffel_tower.jpeg',
+    imageURL: 'opt_pastryimages/eiffel_tower.jpg',
     attribution: 'http://www.clipartbest.com/clipart-eaTeLj5i4'
 };
 
