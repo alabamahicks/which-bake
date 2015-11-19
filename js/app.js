@@ -354,11 +354,11 @@ function loadQuestions(level){
         if (questionBatchKey == levelName){
             currentQuestions = allTheQuestions[i].questions;
         }
+        $('#questions').append('<li>' + '<i class="fa fa-question fa-2x icons" alt="Try this question">' + '</i>' + '</li>');
     }
-    //todo: clean out previous questions when changing level
+    //todo: BUG - getting extra question
+    //todo: other levels not presenting
 
-    //populate #questions with corresponding li count
-    $('#questions').append('<li>' + '<i class="fa fa-question fa-2x icons" alt="Try this question">' + '</i>' + '</li>');
 }
 
 function selectAnswer(choiceIndex){
@@ -374,6 +374,11 @@ function showIntro(){
     $('#photo-attribution').hide();
     $('#learn-more').hide();
     var quizTitle = "Which Bake?";
+    $('#focus h1').show();
+    $('#focus h2').show();
+    $('#focus h3').show();
+    $('#focus h6').show();
+    $('#focus').css('background-image','none');
     $('#focus h1').html(quizTitle);
     $('#focus h2').html(explanationHeader);
     $('#focus h3').html(instructions);
@@ -383,6 +388,8 @@ function showIntro(){
 function startOver(){
     userScore = 0;
     //todo: remove existing questions
+    $('#questions li').remove();
+    $('#choices li').remove();
     showIntro();
     loadQuestions(currentLevel);
 }

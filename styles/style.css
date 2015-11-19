@@ -53,6 +53,7 @@ body{
 	padding-top: 10px;
 	text-align: center;
 	vertical-align: middle;
+	cursor: pointer;
 }
 
 .focus {
@@ -112,6 +113,7 @@ body{
 	right: 50px;
 	bottom: 120px;
 	z-index: 200;
+	cursor: pointer;
 }
 .score {
 	position: fixed;
@@ -145,6 +147,7 @@ h6{
 	position: absolute;
 	bottom: 5px;
 	font-size: 0.7em;
+	cursor: pointer;
 }
 
 #photo-attribution {
