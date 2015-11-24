@@ -211,15 +211,13 @@ body{
 	/*background-color: red;*/
 	background-color: rgba(166,166,166,1.0);
 }
-/*todo: change to dynamically set per theme chosen*/
-.theme-picker li:first-child{
-	background-color: #F2F2F2;
-}
 
 .theme-picker li{
 	background-color: rgb(217, 217, 217);
 }
-
+.theme-picker li.theme-highlight {
+	background-color: #F2F2F2;
+}
 
 .theme-container{
 	/*background-color: green;*/

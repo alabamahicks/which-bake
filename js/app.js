@@ -246,7 +246,7 @@ var instructions = 'Choose a question and test your baking knowledge.  Choose a'
 var level1Questions = {keyLabel: 'level1', questions: [level1_question1, level1_question2]};
 var level2Questions = {keyLabel: 'level2', questions: [level2_question1, level2_question2]};
 var level3Questions = {keyLabel: 'level3', questions: [level3_question1, level3_question2]};
-var allTheQuestions = [level1Questions, level2Questions, level3Questions];
+var allTheLevels = [level1Questions, level2Questions, level3Questions];
 
 var currentLevel = 1;
 var currentQuestions = [];
@@ -256,8 +256,9 @@ var userScore = 0;
 $( document ).ready(function() {
     event.preventDefault(); //prevents default reloading
     showIntro();
-    startOver();
-    loadQuestions(currentLevel);
+    resetScore();
+    loadQuestions(1);
+    $('#theme-picker li:first-child').addClass('theme-highlight');
 
     $( '#addItem').click(function() {
         //SHOW ENTRY
@@ -265,29 +266,53 @@ $( document ).ready(function() {
     });
 
 //on #theme-picker li.click,
+//    $(document).on('click', '#theme-picker li'.each, function (e) {
+//        //write li's index to chosen Level (default = 1)
+//        currentLevel = $(this).index() + 1;
+//
+//        $('#questions li').remove();
+//        loadQuestions(currentLevel);
+//        //showFirstQuestion(currentLevel); //todo
+//
+//        //todo: change highlight of li's to indicate level
+//        $('#theme-picker li').removeClass('theme-highlight');
+//        $(this).addClass('theme-highlight');
+//    });
+
     $('#theme-picker li').click(function() {
     //write li's index to chosen Level (default = 1)
         currentLevel = $(this).index() + 1;
-    loadQuestions(currentLevel);
+
+        $('#questions li').remove();
+        loadQuestions(currentLevel);
+        //showFirstQuestion(currentLevel); //todo
+
+        //change highlight of li's to indicate level
+        $('#theme-picker li').removeClass('theme-highlight');
+        $(this).addClass('theme-highlight');
     });
 
 
 //on #questions li.click, choose quiz question
     $('#questions li').click(function() {
+        alert('other level question clicked');
         //pass index number to displayQuestion
         var indexNumber = ($(this).index());
         displayQuestion(indexNumber);
+        //todo: displayChoices
     });
 
 
 //on #choices li.click
     $('#choices li').click(function() {
-        selectAnswer($(this).index());
+        showAnswer($(this).index());
     });
 
 //on #restart click,
     $('#restart').click(function() {
-        startOver();
+        showIntro();
+        resetScore();
+        loadQuestions(1);
     });
 });
 
@@ -300,7 +325,6 @@ function displayChoices(possibleAnswers){
     for (var i=0; i<possibleAnswers.length; i++){
         var urlString = 'url(' + possibleAnswers[i].imageURL + ')';
         var choiceTitle = possibleAnswers[i].response;
-        //$('#choices').append('<li>'+ '<img src="' + choicePic + '" width="130px" height="80px">' + '</li>');
         $('#choices').append('<li width="132px" height="90px">' + '<div class="frosted">' + choiceTitle + '</div>' + '</li>');
         $('#choices li:last-child').css('background-image', urlString);
         $('#choices li:last-child').attr('alt',urlString);
@@ -346,22 +370,23 @@ function hideIntro(){
 }
 
 function loadQuestions(level){
-    //set var currentQuestions to some collection of question objects
     var levelName = 'level' + level;
-    var index;
-    for (var i=0; i<allTheQuestions.length; i++){
-        var questionBatchKey = allTheQuestions[i].keyLabel;
+
+    for (var i=0; i<allTheLevels.length; i++){
+        var questionBatchKey = allTheLevels[i].keyLabel;
+
         if (questionBatchKey == levelName){
-            currentQuestions = allTheQuestions[i].questions;
+            currentQuestions = allTheLevels[i].questions;
+
+            for (var j=0; j<currentQuestions.length; j++){
+                $('#questions').append('<li>' + '<i class="fa fa-question fa-2x icons" alt="Try this question">' + '</i>' + '</li>');
+            }
         }
-        $('#questions').append('<li>' + '<i class="fa fa-question fa-2x icons" alt="Try this question">' + '</i>' + '</li>');
     }
-    //todo: BUG - getting extra question
-    //todo: other levels not presenting
 
 }
 
-function selectAnswer(choiceIndex){
+function showAnswer(choiceIndex){
     //todo: change li.color = active state
     //todo: set #focus h1.text() = question.scoredState
     //todo: set #focus h2.text() = answer.elaboration
@@ -383,15 +408,12 @@ function showIntro(){
     $('#focus h2').html(explanationHeader);
     $('#focus h3').html(instructions);
     $('#focus h6').html(holdharmless);
-}
-
-function startOver(){
-    userScore = 0;
-    //todo: remove existing questions
     $('#questions li').remove();
     $('#choices li').remove();
-    showIntro();
-    loadQuestions(currentLevel);
+}
+
+function resetScore(){
+    userScore = 0;
 }
 
 
