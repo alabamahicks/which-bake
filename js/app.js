@@ -252,116 +252,7 @@ var currentLevel = 1;
 var currentQuestions = [];
 var userScore = 0;
 
-//on page load:
-$( document ).ready(function() {
-    event.preventDefault(); //prevents default reloading
-    showIntro();
-    resetScore();
-    loadQuestions(1);
-    $('#theme-picker li:first-child').addClass('theme-highlight');
-
-    $( '#addItem').click(function() {
-        //SHOW ENTRY
-        $('.entry-box').show();
-    });
-
-//on #theme-picker li.click,
-//    $(document).on('click', '#theme-picker li'.each, function (e) {
-//        //write li's index to chosen Level (default = 1)
-//        currentLevel = $(this).index() + 1;
-//
-//        $('#questions li').remove();
-//        loadQuestions(currentLevel);
-//        //showFirstQuestion(currentLevel); //todo
-//
-//        //todo: change highlight of li's to indicate level
-//        $('#theme-picker li').removeClass('theme-highlight');
-//        $(this).addClass('theme-highlight');
-//    });
-
-    $('#theme-picker li').click(function() {
-    //write li's index to chosen Level (default = 1)
-        currentLevel = $(this).index() + 1;
-
-        $('#questions li').remove();
-        loadQuestions(currentLevel);
-        //showFirstQuestion(currentLevel); //todo
-
-        //change highlight of li's to indicate level
-        $('#theme-picker li').removeClass('theme-highlight');
-        $(this).addClass('theme-highlight');
-    });
-
-
-//on #questions li.click, choose quiz question
-    $('#questions li').click(function() {
-        alert('other level question clicked');
-        //pass index number to displayQuestion
-        var indexNumber = ($(this).index());
-        displayQuestion(indexNumber);
-        //todo: displayChoices
-    });
-
-
-//on #choices li.click
-    $('#choices li').click(function() {
-        showAnswer($(this).index());
-    });
-
-//on #restart click,
-    $('#restart').click(function() {
-        showIntro();
-        resetScore();
-        loadQuestions(1);
-    });
-});
-
-
-function displayChoices(possibleAnswers){
-    //clear out what's there
-    $('#choices li').remove();
-
-    //set #choices li from possibleAnswers
-    for (var i=0; i<possibleAnswers.length; i++){
-        var urlString = 'url(' + possibleAnswers[i].imageURL + ')';
-        var choiceTitle = possibleAnswers[i].response;
-        $('#choices').append('<li width="132px" height="90px">' + '<div class="frosted">' + choiceTitle + '</div>' + '</li>');
-        $('#choices li:last-child').css('background-image', urlString);
-        $('#choices li:last-child').attr('alt',urlString);
-    }
-}
-
-function displayQuestion(indexNumber){
-    hideIntro();
-    var chosenQuestion;
-    for (var i=0; i<currentQuestions.length; i++){
-        if (indexNumber == i){
-            chosenQuestion = currentQuestions[i];
-            var ask = chosenQuestion.prompt;
-            var askImageURL = 'url(' + chosenQuestion.imageURL + ')';
-            var imgSource = chosenQuestion.attribution;
-            var choices = chosenQuestion.possibleAnswers;
-            $('#focus h1').html(ask);
-            $('#focus').css('background-image', askImageURL);
-            $('#photo-attribution').show();
-            $('#photo-attribution').attr('href', imgSource);
-            $('#photo-attribution').attr('alt',imgSource);
-            $('#focus h2').hide();
-            $('#learn-more').hide();
-            displayChoices(choices);
-            //todo: change #questions li.color = active state
-            var childNumber = indexNumber + 1;
-            $('#questions li:nth-child(childNumber)').addClass('active');
-        }
-    }
-}
-
-function displayScore(){
-    // todo: MARIUS - charting recommendation?
-    // todo: how many questions are loaded?
-    // todo: how many are correct?
-    // todo: update UI...?
-}
+//DEFINE HELPER FUNCTIONS FIRST...
 
 function hideIntro(){
     $('#focus h2').hide();
@@ -383,17 +274,19 @@ function loadQuestions(level){
             }
         }
     }
-
 }
 
-function showAnswer(choiceIndex){
+function showAnswer(){
+    alert($(this).index() + ' answer clicked');
+    var choiceNumber = $(this).index();
+    $('#choices li').removeClass('active');
+    $(this).addClass('active');
     //todo: change li.color = active state
     //todo: set #focus h1.text() = question.scoredState
     //todo: set #focus h2.text() = answer.elaboration
     //todo: set learnMore link
-    displayScore();
+    updateScore();
 }
-
 
 function showIntro(){
     $('#photo-attribution').hide();
@@ -412,14 +305,106 @@ function showIntro(){
     $('#choices li').remove();
 }
 
+function showItem(){
+    var indexNumber = $(this).index();
+    $('#questions li').removeClass('active');
+    $(this).addClass('active');
+    hideIntro();
+    showItemContent(indexNumber);
+}
+
+function showItemContent(indexNumber){
+    var chosenQuestion;
+    for (var i=0; i<currentQuestions.length; i++){
+        if (indexNumber == i){
+            chosenQuestion = currentQuestions[i];
+            var ask = chosenQuestion.prompt;
+            var askImageURL = 'url(' + chosenQuestion.imageURL + ')';
+            var imgSource = chosenQuestion.attribution;
+            var choices = chosenQuestion.possibleAnswers;
+            $('#focus h1').html(ask);
+            $('#focus').css('background-image', askImageURL);
+            $('#photo-attribution').show();
+            $('#photo-attribution').attr('href', imgSource);
+            $('#photo-attribution').attr('alt',imgSource);
+            $('#focus h2').hide();
+            $('#learn-more').hide();
+            showItemOptions(choices);
+        }
+    }
+}
+
+function showItemOptions(possibleAnswers){
+    //clear out what's there
+    $('#choices li').remove();
+
+    //set #choices li from possibleAnswers
+    for (var i=0; i<possibleAnswers.length; i++){
+        var urlString = 'url(' + possibleAnswers[i].imageURL + ')';
+        var choiceTitle = possibleAnswers[i].response;
+        $('#choices').append('<li width="132px" height="90px">' +
+            '<div class="frosted">' + choiceTitle + '</div>' + '</li>');
+        $('#choices li:last-child').css('background-image', urlString);
+        $('#choices li:last-child').attr('alt',urlString);
+    }
+}
+
 function resetScore(){
     userScore = 0;
 }
 
-
+function updateScore(){
+    // todo: MARIUS - charting recommendation?
+    // todo: how many questions are loaded?
+    // todo: how many are correct?
+    // todo: update UI...?
+}
 
 //<li><i class="fa fa-check-square-o fa-2x icons" alt="You rock! Click to reread"></i></li>
 //<li><i class="fa fa-times fa-2x icons" alt="Missed this one. Click to try again"></i></li>
+
+//SECOND, TARGETS AVAILABLE ON PAGE LOAD:
+
+$( document ).ready(function() {
+    event.preventDefault(); //prevents default reloading
+    showIntro();
+    resetScore();
+    loadQuestions(1);
+    $('#theme-picker li:first-child').addClass('theme-highlight');
+
+    $( '#addItem').click(function() {
+        //SHOW ENTRY
+        $('.entry-box').show();
+    });
+
+    $('#theme-picker li').click(function() {
+    //write li's index to chosen Level (default = 1)
+        currentLevel = $(this).index() + 1;
+
+        $('#questions li').remove();
+        loadQuestions(currentLevel);
+        //showFirstQuestion(currentLevel); //todo
+
+        //change highlight of li's to indicate level
+        $('#theme-picker li').removeClass('theme-highlight');
+        $(this).addClass('theme-highlight');
+    });
+
+//on #restart click,
+    $('#restart').click(function() {
+        showIntro();
+        resetScore();
+        loadQuestions(1);
+    });
+});
+
+//THIRD, TARGETS NOT AVAILABLE ON PAGE LOAD
+
+//on #questions li.click, show associated quiz question
+$(document).on('click', '#questions li', showItem);
+
+//on #choices li.click, show enlarged answer image and text
+$(document).on('click', '#choices li', showAnswer);
 
 
 
