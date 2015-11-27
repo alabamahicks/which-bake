@@ -108,7 +108,7 @@ var level2_answer6 = {
     elaboration: 'An Eastern European sweet bread traditionally ' +
     'served at Christmas, featuring narrow layers of filling ' +
     '(chocolate, walnut, and poppyseed are common)' +
-    'filling rolled and then crammed into a loaf tin, producing complex ' +
+    ' rolled and then crammed into a loaf tin, producing complex ' +
     'marbling in the slices.',
     imageURL: 'opt_pastryimages/povitica.jpg',
     attribution: 'http://alpineberry.blogspot.com/2011/10/povitica.html',
@@ -223,7 +223,7 @@ var level3_question1 = {
 
 var level3_question2 = {
     prompt: 'Which of these French-sounding pastries isn\'t actually French?',
-    correctAnswer: level3_answer1,
+    correctAnswer: level3_answer4,
     possibleAnswers: [level3_answer4, level3_answer5, level3_answer6],
     score: scoreState.UNSCORED,
     imageURL: 'opt_pastryimages/eiffel_tower.jpg',
@@ -251,6 +251,7 @@ var allTheLevels = [level1Questions, level2Questions, level3Questions];
 var currentLevel = 1;
 var currentQuestions = [];
 var userScore = 0;
+var chosenQuestion = {};
 
 //DEFINE HELPER FUNCTIONS FIRST...
 
@@ -277,15 +278,46 @@ function loadQuestions(level){
 }
 
 function showAnswer(){
-    alert($(this).index() + ' answer clicked');
+    //alert($(this).index() + ' answer clicked');
     var choiceNumber = $(this).index();
     $('#choices li').removeClass('active');
     $(this).addClass('active');
-    //todo: change li.color = active state
-    //todo: set #focus h1.text() = question.scoredState
-    //todo: set #focus h2.text() = answer.elaboration
-    //todo: set learnMore link
-    updateScore();
+    //set focus to selected answer of chosenQuestion
+    var choice = chosenQuestion.item.possibleAnswers[choiceNumber];
+    var answer = choice.response;
+    var answerImageURL = 'url(' + choice.imageURL + ')';
+    var imgSource = choice.attribution;
+    var linkSource = choice.learningLink;
+    var score;
+    if (chosenQuestion.item.correctAnswer == choice){
+        score = 'Correct!';
+        //chosenQuestion.score = scoreState.CORRECT; //todo: for charting?
+        $('#questions li:nth-child(' + chosenQuestion.itemNumber + ')').removeClass('fa-question');
+        $('#questions li:nth-child(' + chosenQuestion.itemNumber + ')').addClass('fa-check-square-o');
+    }
+    else {
+        score = 'Try again...';
+        //chosenQuestion.score = scoreState.INCORRECT;  //todo: for charting?
+        $('#questions li:nth-child(' + chosenQuestion.itemNumber + ')').removeClass('fa-question');
+        $('#questions li:nth-child(' + chosenQuestion.itemNumber + ')').addClass('fa-times');
+    }
+
+    $('#focus h1').html(score);
+    $('#focus h2').html(choice.response);
+    $('#focus h2').addClass('frosted');
+    $('#focus h2').show();
+
+    $('#focus h3').html(choice.elaboration);
+    $('#focus h3').addClass('frosted');
+    $('#focus h3').show();
+    $('#learn-more').show();
+    $('#learn-more').attr('href', linkSource);
+    $('#learn-more').attr('alt', linkSource);
+    $('#focus').css('background-image', answerImageURL);
+    $('#photo-attribution').show();
+    $('#photo-attribution').attr('href', imgSource);
+    $('#photo-attribution').attr('alt',imgSource);
+
 }
 
 function showIntro(){
@@ -314,14 +346,13 @@ function showItem(){
 }
 
 function showItemContent(indexNumber){
-    var chosenQuestion;
     for (var i=0; i<currentQuestions.length; i++){
         if (indexNumber == i){
-            chosenQuestion = currentQuestions[i];
-            var ask = chosenQuestion.prompt;
-            var askImageURL = 'url(' + chosenQuestion.imageURL + ')';
-            var imgSource = chosenQuestion.attribution;
-            var choices = chosenQuestion.possibleAnswers;
+            chosenQuestion = {itemNumber:indexNumber, item: currentQuestions[i]};
+            var ask = chosenQuestion.item.prompt;
+            var askImageURL = 'url(' + chosenQuestion.item.imageURL + ')';
+            var imgSource = chosenQuestion.item.attribution;
+            var choices = chosenQuestion.item.possibleAnswers;
             $('#focus h1').html(ask);
             $('#focus').css('background-image', askImageURL);
             $('#photo-attribution').show();
