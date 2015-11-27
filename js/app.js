@@ -187,7 +187,7 @@ var level1_question1 = {
 
 var level1_question2 = {
     prompt: 'Which biscuits (cookies) are NOT made from puff pastry?',
-    correctAnswer: level1_answer3,
+    correctAnswer: level1_answer6,
     possibleAnswers: [level1_answer4, level1_answer5, level1_answer6],
     score: scoreState.UNSCORED,
     imageURL: 'opt_pastryimages/puff_closeup.jpg',
@@ -205,7 +205,7 @@ var level2_question1 = {
 
 var level2_question2 = {
     prompt: 'Which holiday treat requires a special set of molds?',
-    correctAnswer: level2_answer1,
+    correctAnswer: level2_answer4,
     possibleAnswers: [level2_answer4, level2_answer5, level2_answer6],
     score: scoreState.UNSCORED,
     imageURL: 'opt_pastryimages/baking-trays.jpg',
@@ -271,7 +271,17 @@ function loadQuestions(level){
             currentQuestions = allTheLevels[i].questions;
 
             for (var j=0; j<currentQuestions.length; j++){
-                $('#questions').append('<li>' + '<i class="fa fa-question fa-2x icons" alt="Try this question">' + '</i>' + '</li>');
+                //todo: check question's scoreState and set question's li i class accordingly
+                var currentScore = currentQuestions[j].score;
+                if (currentQuestions[j].score == scoreState.CORRECT){
+                    $('#questions').append('<li>' + '<i class="fa fa-check-square-o fa-2x icons" alt="Try this question">' + '</i>' + '</li>');
+                } else
+                if (currentQuestions[j].score == scoreState.INCORRECT){
+                    $('#questions').append('<li>' + '<i class="fa fa-times fa-2x icons" alt="Try this question">' + '</i>' + '</li>');
+                } else {
+                    $('#questions').append('<li>' + '<i class="fa fa-question fa-2x icons" alt="Try this question">' + '</i>' + '</li>');
+                }
+
             }
         }
     }
@@ -284,22 +294,25 @@ function showAnswer(){
     $(this).addClass('active');
     //set focus to selected answer of chosenQuestion
     var choice = chosenQuestion.item.possibleAnswers[choiceNumber];
-    var answer = choice.response;
+    //var answer = choice.response;
     var answerImageURL = 'url(' + choice.imageURL + ')';
     var imgSource = choice.attribution;
     var linkSource = choice.learningLink;
     var score;
+    var scoredItem = chosenQuestion.itemNumber + 1;
     if (chosenQuestion.item.correctAnswer == choice){
         score = 'Correct!';
-        //chosenQuestion.score = scoreState.CORRECT; //todo: for charting?
-        $('#questions li:nth-child(' + chosenQuestion.itemNumber + ')').removeClass('fa-question');
-        $('#questions li:nth-child(' + chosenQuestion.itemNumber + ')').addClass('fa-check-square-o');
+        chosenQuestion.score = scoreState.CORRECT; //todo: for charting?
+        //alert(chosenQuestion.itemNumber);
+        $('#questions li:nth-child(' + scoredItem + ') i').removeClass();
+        $('#questions li:nth-child(' + scoredItem + ') i').addClass('fa fa-check-square-o fa-2x icons');
     }
     else {
         score = 'Try again...';
-        //chosenQuestion.score = scoreState.INCORRECT;  //todo: for charting?
-        $('#questions li:nth-child(' + chosenQuestion.itemNumber + ')').removeClass('fa-question');
-        $('#questions li:nth-child(' + chosenQuestion.itemNumber + ')').addClass('fa-times');
+        chosenQuestion.score = scoreState.INCORRECT;  //todo: for charting?
+        //alert(chosenQuestion.itemNumber);
+        $('#questions li:nth-child(' + scoredItem + ') i').removeClass();
+        $('#questions li:nth-child(' + scoredItem + ') i').addClass('fa fa-times fa-2x icons');
     }
 
     $('#focus h1').html(score);
@@ -380,6 +393,40 @@ function showItemOptions(possibleAnswers){
     }
 }
 
+function storeScores(){
+    //for each li in #questions, check score, and determine associated question.  Set its scoreState accordingly.
+
+    var levelLabel = 'level' + currentLevel;
+    for (var i=0; i<allTheLevels.length; i++){
+        if (allTheLevels[i].keyLabel == levelLabel){
+            var presentLevel = allTheLevels[i];
+            for (var j=0; j<presentLevel.questions.length; j++){
+                var modelQuestions = presentLevel.questions;
+                for (var k=0; k<$('#questions li').length; k++){
+                    //compare graphic list against model list //todo: BUG: sets all to be correct
+                    if (j == k){
+                        if ($('#questions li i').hasClass('fa-check-square-o')){
+                            presentLevel.questions[j].score = scoreState.CORRECT;
+                        } else
+                        if ($('#questions li i').hasClass('fa-times')){
+                            presentLevel.questions[j].score = scoreState.INCORRECT;
+                        } else {
+                            presentLevel.questions[j].score = scoreState.UNSCORED;
+                        }
+                    }
+                }
+
+
+            }
+
+
+
+            //allTheLevels[i].questions = currentQuestions;
+            alert('scores stored for ' + levelLabel);
+        }
+    }
+}
+
 function resetScore(){
     userScore = 0;
 }
@@ -390,9 +437,6 @@ function updateScore(){
     // todo: how many are correct?
     // todo: update UI...?
 }
-
-//<li><i class="fa fa-check-square-o fa-2x icons" alt="You rock! Click to reread"></i></li>
-//<li><i class="fa fa-times fa-2x icons" alt="Missed this one. Click to try again"></i></li>
 
 //SECOND, TARGETS AVAILABLE ON PAGE LOAD:
 
@@ -410,11 +454,13 @@ $( document ).ready(function() {
 
     $('#theme-picker li').click(function() {
     //write li's index to chosen Level (default = 1)
+        storeScores();
+
         currentLevel = $(this).index() + 1;
 
         $('#questions li').remove();
         loadQuestions(currentLevel);
-        //showFirstQuestion(currentLevel); //todo
+        //todo: display some cover image for level
 
         //change highlight of li's to indicate level
         $('#theme-picker li').removeClass('theme-highlight');
