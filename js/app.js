@@ -1,4 +1,10 @@
-//todo: MARIUS - How do I put this stuff in a resource file?
+//todo: put this stuff in a resource file?
+//todo: further improve loading of question images - optimize size further? sprites?
+//todo: improve styling of highlighted question
+//todo: provide 'level changed' indication
+//todo: fix persistence bug
+//todo: try highcharts for score aggregation
+//todo: include question in answer
 
 var level1_answer1 = {
     response: 'Choux',
