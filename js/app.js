@@ -415,14 +415,9 @@ function storeScores(){
                         }
                     }
                 }
-
-
             }
-
-
-
             //allTheLevels[i].questions = currentQuestions;
-            alert('scores stored for ' + levelLabel);
+            //alert('scores stored for ' + levelLabel);
         }
     }
 }
